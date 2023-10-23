@@ -123,7 +123,7 @@ logout(){
 
   ngOnInit() {
 
-    this.http.get('http://localhost:5000/jwt',{
+    this.http.get('https://chatapp-backend-s33e.onrender.com/jwt',{
       withCredentials:true
     }).subscribe((res:any)=>{
        this.logeduserid=res._id;

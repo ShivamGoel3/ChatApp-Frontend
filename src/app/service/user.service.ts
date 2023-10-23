@@ -7,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  url1 = 'http://localhost:5000/login';
-  url2 = 'http://localhost:5000/signup';
-  url3 = 'http://localhost:5000/alluser';
-  url4 = 'http://localhost:5000/accesschat';
-  url5 = 'http://localhost:5000/fetchchat';
-  url6 = 'http://localhost:5000/sendmessage';
-  url7 = 'http://localhost:5000/allmessages';
-  url8 = 'http://localhost:5000/deletemessage';
-  url9 = 'http://localhost:5000/editmessage';
-  url10 = 'http://localhost:5000/logout';
+  url1 = 'https://chatapp-backend-s33e.onrender.com/login';
+  url2 = 'https://chatapp-backend-s33e.onrender.com/signup';
+  url3 = 'https://chatapp-backend-s33e.onrender.com/alluser';
+  url4 = 'https://chatapp-backend-s33e.onrender.com/accesschat';
+  url5 = 'https://chatapp-backend-s33e.onrender.com/fetchchat';
+  url6 = 'https://chatapp-backend-s33e.onrender.com/sendmessage';
+  url7 = 'https://chatapp-backend-s33e.onrender.com/allmessages';
+  url8 = 'https://chatapp-backend-s33e.onrender.com/deletemessage';
+  url9 = 'https://chatapp-backend-s33e.onrender.com/editmessage';
+  url10 = 'https://chatapp-backend-s33e.onrender.com/logout';
 
   logeduser: any
   constructor(private http: HttpClient) { }
