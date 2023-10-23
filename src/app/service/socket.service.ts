@@ -7,7 +7,7 @@ import { io } from 'socket.io-client';
 export class SocketService {
   public message$: BehaviorSubject<string> = new BehaviorSubject('');
 
-  socket = io('http://chatapp-backend-s33e.onrender.com');
+  socket = io("https://chatapp-backend-s33e.onrender.com");
 
 
   public sendmessage(message: any) {
