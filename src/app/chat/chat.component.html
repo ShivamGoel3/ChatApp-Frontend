@@ -1,0 +1,61 @@
+<div class="searchfirst">
+    <form #usersForm="ngForm" (ngSubmit)="searchuser(usersForm.value)">
+        <input type="text" ngModel name="name" placeholder="Enter name">
+        <button class="searchbutton">Search</button>
+    </form>
+</div>
+<div class="searchsecond" *ngIf="this.searchuserlist!=undefined">
+    <a *ngFor="let c of searchuserlist">
+        <div class="searchsecondinner" (click)="accesschat({userId:c._id,_id:logeduserid})">
+            {{ c.name }} {{ c.mobile }}</div>
+    </a>
+
+</div>
+<button (click)="logout()" class="logoutbutton">logout</button>
+
+
+<div class="chatlist">
+
+    <div class="chats">Hi Welcome {{logeduser.name}} {{logeduser.mobile}}</div>
+    <div class="chats">User chat list</div>
+    <div class="chatlistthird">
+        <a *ngFor="let c of userchatlist">
+            <div *ngIf="c.users[0]._id!=this.logeduserid" (click)="showchat(c)" class="chats">
+                {{ c.users[0].name }} {{ c.users[0].mobile }}
+            </div>
+            <div *ngIf="c.users[1]._id!=this.logeduserid" (click)="showchat(c)" class="chats">
+                {{ c.users[1].name }} {{ c.users[1].mobile }}
+            </div>
+
+        </a>
+    </div>
+</div>
+
+<div class="chatbox">
+    <div *ngIf="this.chatdetail!=undefined && this.chatdetail.users[1]._id!=this.logeduserid" class="chats">
+        {{this.chatdetail.users[1].name}} {{this.chatdetail.users[1].mobile}}
+    </div>
+    <div *ngIf="this.chatdetail!=undefined && this.chatdetail.users[0]._id!=this.logeduserid" class="chats">
+        {{this.chatdetail.users[0].name}}
+        {{this.chatdetail.users[0].mobile}}
+    </div>
+    <div class="chatboxfirst">
+        <a *ngFor="let message of messagelist">
+            <div class="chatboxfirstinneryou" *ngIf="message.sender._id==this.logeduserid"
+            (click)="callprompt(message)"
+            >
+                {{message.content}}
+            </div>
+            <div class="chatboxfirstinnerhim" *ngIf="message.sender._id!=this.logeduserid">
+                {{message.content}}
+            </div>
+        </a>
+    </div>
+    <div class="chatboxsecond">
+        <form #usermessage="ngForm" (ngSubmit)="sendmessage(usermessage.value)">
+            <input type="text" ngModel name="content" placeholder="Enter message">
+            <button class="chatboxbutton">Send</button>
+        </form>
+    </div>
+
+</div>

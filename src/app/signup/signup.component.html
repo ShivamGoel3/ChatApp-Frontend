@@ -1,0 +1,13 @@
+<div class="signup-box">
+    <h2>Sign up</h2>
+
+    <form #usersForm="ngForm" (ngSubmit)="validate(usersForm.value)&&signuppage(usersForm.value)">
+        <div class="user-box">Name <input type="text" ngModel name="name" placeholder="Enter Name"></div>
+        <div class="user-box">Email <input type="text" ngModel name="email" placeholder="Enter Email"></div>
+        <div class="user-box">Mobile <input type="text" ngModel name="mobile" placeholder="Enter Mobile"></div>
+        <div class="user-box">Passsword <input type="text" ngModel name="password" placeholder="Enter Password"></div>
+        <div class="user-box">Confirm Passsword <input type="text" ngModel name="confirmpassword"
+                placeholder="Enter Confirm Password"></div>
+        <button class="appbutton">Signup</button>
+    </form>
+</div>

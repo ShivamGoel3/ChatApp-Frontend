@@ -1,0 +1,12 @@
+<div class="login-box">
+     <h2>Login</h2>
+     <form #usersForm="ngForm" (ngSubmit)="validate(usersForm.value)&&loginpage(usersForm.value)">
+          <div class="user-box"> Mobile <input type="text" ngModel name="mobile" placeholder="Enter Mobile"></div>
+          <div class="user-box">Passsword <input type="text" ngModel name="password" placeholder="Enter Password"></div>
+          <button class="appbutton">Login</button>
+     </form>
+     <br />
+     <h4>Doesnot have an account</h4>
+     <a class="appbutton" routerLink="/signup">Signup</a>
+
+</div>
