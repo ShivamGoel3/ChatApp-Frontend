@@ -42,7 +42,7 @@ export class LoginComponent {
     this.userservice.login(data).subscribe((result) => {
 
       this.userdetail = result;
-console.log(result.body);
+// console.log(result.body);
       if (this.userdetail.body.message == "Invalid Mobile or Password") {
         window.alert("Invalid Mobile or Password")
       }
