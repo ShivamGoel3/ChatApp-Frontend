@@ -135,7 +135,8 @@ logout(){
 
       // this.messag="You are not loged in "
       // this.userchatlist.
-      this.router.navigateByUrl('/login');
+      
+      // this.router.navigateByUrl('/login');
 
     }
     

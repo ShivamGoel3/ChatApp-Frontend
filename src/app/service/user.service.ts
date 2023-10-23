@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-
+  // https://chatapp-backend-s33e.onrender.com/
   url1 = 'https://chatapp-backend-s33e.onrender.com/login';
   url2 = 'https://chatapp-backend-s33e.onrender.com/signup';
   url3 = 'https://chatapp-backend-s33e.onrender.com/alluser';
