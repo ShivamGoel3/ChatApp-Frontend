@@ -7,11 +7,11 @@ import { ChatComponent } from './chat/chat.component';
 const routes: Routes = [
   {
     component: LoginComponent,
-    path: "/login"
+    path: "login"
   },
   {
     component: SignupComponent,
-    path: "/signup"
+    path: "signup"
   },
   {
     component: ChatComponent,
