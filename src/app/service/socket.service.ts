@@ -16,24 +16,12 @@ export class SocketService {
   public notifymessage() {
     this.socket.emit('notify', "notify");
   }
-  // public deletemessage() {
-  //   this.socket.on('delete',(arg)=>{
-  //     console.log(arg);
-  //     this.message$.next(arg);
 
-  //   });
-  //   return this.message$.asObservable();
-
-  // }
-
- public getnotifymessage() {
-    this.socket.on('notify',(arg)=>{
-      console.log(arg);
+  public getnotifymessage() {
+    this.socket.on('notify', (arg) => {
       this.message$.next(arg);
-
     });
     return this.message$.asObservable();
-
   }
 
   public getnewmessage = () => {
@@ -42,11 +30,10 @@ export class SocketService {
     });
     return this.message$.asObservable();
   }
-  public joinchat(data: any) {
 
+  public joinchat(data: any) {
     this.socket.emit('join chat', data
     );
-
   }
 
 }

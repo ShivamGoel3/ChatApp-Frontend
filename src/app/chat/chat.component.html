@@ -42,8 +42,7 @@
     <div class="chatboxfirst">
         <a *ngFor="let message of messagelist">
             <div class="chatboxfirstinneryou" *ngIf="message.sender._id==this.logeduserid"
-            (click)="callprompt(message)"
-            >
+                (click)="callprompt(message)">
                 {{message.content}}
             </div>
             <div class="chatboxfirstinnerhim" *ngIf="message.sender._id!=this.logeduserid">

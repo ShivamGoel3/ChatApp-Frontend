@@ -58,7 +58,6 @@ export class SignupComponent {
   signuppage(data: any) {
     this.userservice.signup(data).subscribe((result) => {
       this.userdetail = result;
-  // console.log(result)
       if (this.userdetail.body.message == "User already exist") {
         window.alert("User already exist")
       }
