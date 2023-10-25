@@ -27,6 +27,7 @@ export class ChatComponent {
     this.userservice.searchuser(data).subscribe((result) => {
       this.searchuserlist = result.body
       console.log(this.searchuserlist)
+      console.log(typeof(this.userchatlist))
     });
   }
 
