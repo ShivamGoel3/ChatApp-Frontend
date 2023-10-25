@@ -89,7 +89,7 @@ export class ChatComponent {
   }
 
   logout() {
-    localStorage.removeItem("userInfo");
+    localStorage.removeItem("JWT");
     this.router.navigateByUrl('/login');
   }
 
