@@ -77,11 +77,6 @@ export class UserService {
     });
   }
 
-  logout() {
-    return this.http.get(this.url10, {
-      observe: 'response',
-      withCredentials: true
-    });
-  }
+
 
 }

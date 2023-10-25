@@ -88,13 +88,13 @@ export class ChatComponent {
   }
 
   logout() {
-    this.userservice.logout().subscribe((result) => {
-      this.router.navigateByUrl('/login');
-    });
+    localStorage.removeItem("userInfo");
+    this.router.navigateByUrl('/login');
   }
 
   ngOnInit() {
-    this.http.get("https://chatapp-backend-s33e.onrender.com/jwt", {
+    let userInfo = JSON.parse(localStorage.getItem('JWT') || '{}');
+    this.http.post("https://chatapp-backend-s33e.onrender.com/jwt", { token: userInfo }, {
       withCredentials: true
     }).subscribe((res: any) => {
       this.logeduserid = res._id;

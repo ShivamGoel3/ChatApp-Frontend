@@ -35,7 +35,6 @@ export class LoginComponent {
   loginpage(data: any) {
     this.userservice.login(data).subscribe((result) => {
       this.userdetail = result;
-
       if (this.userdetail.body.message == "User Not exist") {
         window.alert("User Not exist, Please sign up")
       }
@@ -43,6 +42,7 @@ export class LoginComponent {
         window.alert("Invalid Mobile or Password")
       }
       else {
+        localStorage.setItem("JWT", JSON.stringify(this.userdetail.body.token));
         this.router.navigateByUrl('/');
       }
     });
