@@ -25,10 +25,10 @@ export class ChatComponent {
 
   searchuser(data: any) {
     this.userservice.searchuser(data).subscribe((result) => {
-      // this.searchuserlist = result.body
-      if(result.body.length>0)
-      this.searchuserlist=result.body
-      else
+      this.searchuserlist = result.body
+      if(this.searchuserlist.length==0)
+      // this.searchuserlist=result.body
+      // else
       this.searchuserlist=undefined
       // console.log(this.searchuserlist)
       // console.log(typeof(this.searchuserlist))
