@@ -35,7 +35,11 @@ export class LoginComponent {
   loginpage(data: any) {
     this.userservice.login(data).subscribe((result) => {
       this.userdetail = result;
-      if (this.userdetail.body.message == "Invalid Mobile or Password") {
+
+      if (this.userdetail.body.message == "User Not exist") {
+        window.alert("User Not exist, Please sign up")
+      }
+      else if (this.userdetail.body.message == "Invalid Mobile or Password") {
         window.alert("Invalid Mobile or Password")
       }
       else {
