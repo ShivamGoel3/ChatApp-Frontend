@@ -4,7 +4,7 @@
         <button class="searchbutton">Search</button>
     </form>
 </div>
-<div class="searchsecond" *ngIf="this.searchuserlist!=undefined && this.searchuserlist.length>0">
+<div class="searchsecond" *ngIf="this.searchuserlist!=undefined  ">
     <a *ngFor="let c of searchuserlist">
         <div class="searchsecondinner" (click)="accesschat({userId:c._id,_id:logeduserid})">
             {{ c.name }} {{ c.mobile }}</div>
